@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,7 +34,7 @@ class AssessmentApplicationTests {
 
 		Optional<Quotation> opt = qSvc.getQuotations(testOrder);
 
-		assertTrue(opt.isEmpty());
+		Assertions.assertTrue(opt.isEmpty());
 
 	}
 
