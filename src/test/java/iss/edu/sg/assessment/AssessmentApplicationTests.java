@@ -1,14 +1,17 @@
 package iss.edu.sg.assessment;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import iss.edu.sg.assessment.model.Quotation;
 import iss.edu.sg.assessment.service.QuotationService;
 
 @SpringBootTest
@@ -29,7 +32,9 @@ class AssessmentApplicationTests {
 			testOrder.add("plum");
 			testOrder.add("pear");
 
-		assertFalse(qSvc.getQuotations(testOrder).isEmpty());
+		Optional<Quotation> opt = qSvc.getQuotations(testOrder);
+
+		assertTrue(opt.isEmpty());
 
 	}
 
