@@ -1,7 +1,6 @@
 package iss.edu.sg.assessment;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.inOrder;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import iss.edu.sg.assessment.service.QuotationService;
-import jakarta.json.Json;
-import jakarta.json.JsonObject;
 
 @SpringBootTest
 class AssessmentApplicationTests {
@@ -31,8 +28,9 @@ class AssessmentApplicationTests {
 			testOrder.add("durian");
 			testOrder.add("plum");
 			testOrder.add("pear");
-		
-		
+
+		assertFalse(qSvc.getQuotations(testOrder).isEmpty());
+
 	}
 
 }

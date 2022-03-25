@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -62,7 +60,6 @@ public class PurchaseOrderRestController {
                     itemsList.add(itemFruit);
                 }
             }
-
 
             System.out.println(">>> Order details: " + name + ", " + email + ", " + address + ", " + itemsList + ", " + navID);
             Optional<Quotation> quotation = qSvc.getQuotations(itemsList);
